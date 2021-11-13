@@ -16,51 +16,41 @@
 <body>
 
     <!-- header weather dashboard --> 
-    <header class="container no-gutters">
-        <div class="row bg-primary text-white vw-100 d-flex justify-content-center">
+    <header class="container-fluid text-center text-white bg-primary p-2">
         <h1>Weather Dashboard</h1>
-        </div>
     </header>
 
     <!-- left side search bar with buttons -->
     <div class="row min-vh-100 no-gutters">
         <header class="col-12 col-lg-3 bg-white text-dark sticky-top d-flex flex-column p-4 p-lg-3">
-            <h2 class="text-left">Search for a City:</h2>
+            <h4 class="text-left">Search for a City:</h4>
             <form id="form">
                 <input type="search" class="form-control-lg w-100" id="query" placeholder="Raleigh">
             </form>
-            <button id="search" class="btn btn-block btn-search bg-primary text-white mt-2" data-target="#query">Search</button>
+            <button id="search" class="btn btn-primary text-white mt-2" type="submit">Search</button>
+
+            <!-- search error -->
+            <div id="searchError"></div>
 
             <!-- line break -->
             <hr style="width: 100%; height: 3px;" size="3" color="lightgray">
 
-            <!-- preset buttons -->
-            <button id="austin" class="btn btn-block btn-search bg-secondary text-white mt-2" data-target="#query">Austin</button>
-
-            <button id="chicago" class="btn btn-block btn-search bg-secondary text-white mt-2" data-target="#query">Chicago</button>
-
-            <button id="newYork" class="btn btn-block btn-search bg-secondary text-white mt-2" data-target="#query">New York</button>
-
-            <button id="orlando" class="btn btn-block btn-search bg-secondary text-white mt-2" data-target="#query">Orlando</button>
-
-            <button id="sanFrancisco" class="btn btn-block btn-search bg-secondary text-white mt-2" data-target="#query">San Francisco</button>
-
-            <button id="seattle" class="btn btn-block btn-search bg-secondary text-white mt-2" data-target="#query">Seattle</button>
-
-            <button id="denver" class="btn btn-block btn-search bg-secondary text-white mt-2" data-target="#query">Denver</button>
-
-            <button id="atlanta" class="btn btn-block btn-search bg-secondary text-white mt-2" data-target="#query">Atlanta</button>
+            <!-- history -->
+            <ul class="past-search mt-4" id="history"></ul>
 
         </header>
+        
+        <!-- right side weather information-->
+        <div id="weather" class="col-md-9 mt-4">
+
+            <!-- todays weather -->
+            <div id="currentWeather" class="border rounded"></div>
+
+            <!-- 5 day forecast -->
+            <div id="fiveDayForecast" class="mt-5"></div>
+            
+        </div>
     </div>
-
-
-
-
-
-
-
-
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
