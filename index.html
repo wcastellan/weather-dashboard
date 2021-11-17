@@ -1,64 +1,67 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-    <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
-    <title>Weather Report</title>
+    <title>Weather Dashboard</title>
 </head>
+
 <body>
+    <!-- header -->
+    <div id="header" class="container-fluid text-center text-white p-2">
+        <h1 id="header-text">Weather Dashboard</h1>
+    </div>
 
-    <!-- header weather dashboard --> 
-    <header class="container-fluid text-center text-white bg-primary p-2">
-        <h1>Weather Dashboard</h1>
-    </header>
+    <!-- main content -->
+    <div id="content" class="container m-1">
+        <div class="row">
 
-    <!-- left side search bar with buttons -->
-    <div class="row min-vh-100 no-gutters">
-        <header class="col-12 col-lg-3 bg-white text-dark sticky-top d-flex flex-column p-4 p-lg-3">
-            <h4 class="text-left">Search for a City:</h4>
-            <form id="form">
-                <input type="search" class="form-control-lg w-100" id="citySearch" placeholder="Raleigh">
-                <button id="search" class="btn btn-block btn-primary text-white mt-2" type="submit">Search</button>
-            </form>
-            
+            <!-- left side search bar with buttons -->
+            <div id="searchInfo" class="col-md-3">
 
-            <!-- search error -->
-            <div id="searchError"></div>
+                <form class="">
+                    <label for="search-city">Search for a City:</label>
+                    <div class="form-row">
+                        <input id="citySearch" class="form-control-lg w-100" name="city" placeholder="Raleigh"></input>
+                        <button id="search" class="btn btn-block btn-primary mt-2 " type="submit">Search</button>
+                    </div>
+                </form>
 
-            <!-- line break -->
-            <hr style="width: 100%; height: 3px;" size="3" color="lightgray">
+                <div id="searchError"></div>
 
-            <!-- history -->
-            <ul id="history" class="past-search mt-2 p-0"></ul>
+                <!-- line break -->
+                <hr style="width: 100%; height: 3px;" size="3" color="lighgrey">
+                
+                <!-- history -->
+                <ul id="history" class="col-12 list-group mt-4 p-0 text-center"></ul>
+                
+                <!-- clear storage button -->
+                <button id="clearStorage" class="btn btn-block btn-warning text-white mt-2 m-0" href="#">Clear</button>    
+            </div>
 
-        </header>
-        
-        <!-- right side weather information-->
-        <div id="weather" class="col-md-9 mt-4">
+            <!-- Right side weather information -->
+            <div id="weather" class="col-md-9 pt-4">
 
-            <!-- todays weather -->
-            <div id="currentWeather" class="border rounded"></div>
+                <!-- todays weather -->
+                <div id="currentWeather" class="border rounded"></div>
 
-            <!-- 5 day forecast -->
-            <div id="fiveDayForecast" class="mt-5"></div>
-            
+                <!-- 5 day forecast -->
+                <div id="fiveDayForecast" class="mt-5"></div>
+
+            </div>
         </div>
     </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+   
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/javascript/script.js"></script>
+    
 </body>
 </html>
